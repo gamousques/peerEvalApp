@@ -26,25 +26,26 @@ th, td {
 </style>
 
 </head>
-<body ng-controller="courseListCtrl as coursesCtrl">
-  <p>
- {{"This tool is to provide peer evaluation." + "hello"}}
-  </p>
+<body>
+  <h1>
+ {{"This tool is to provide peer evaluation."}}
+  </h1>
   <hr>
-  <h1>Cursos</h1>
-  <table border="1" style="width:100%" >
-  <caption>Cursos</caption>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripción</th>
-    <th>Docente</th>
-  </tr>
-  <tr ng-repeat="course in coursesCtrl.courseData">
-    <td> {{course.name}} </td>
-    <td> {{course.description}}  </td>
-    <td><strong><i>{{course.instructor}}</i></strong></td>
-  </tr>
-  </table>
+  <div ng-controller="courseListCtrl as coursesCtrl">
+    <h1>Cursos</h1>
+    <table border="1" style="width:50%" >
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Docente</th>
+    </tr>
+    <tr ng-repeat="course in coursesCtrl.courseData">
+      <td> {{course.name}} </td>
+      <td> {{course.description}}  </td>
+      <td><strong><i>{{course.instructor}}</i></strong></td>
+    </tr>
+    </table>
+  </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
