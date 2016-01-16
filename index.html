@@ -14,6 +14,17 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+
 </head>
 <body ng-controller="courseListCtrl as coursesCtrl">
   <p>
@@ -21,12 +32,19 @@
   </p>
   <hr>
   <h1>Cursos</h1>
-  <div ng-repeat="course in coursesCtrl.courseData">
-  <h2> Nombre Curso:     {{course.name}}  </h2>
-  <h3> Descripción:     {{course.description}}  </h3>
-  <p><strong><i>Docente: {{course.instructor}}</i></strong></p>
-  <hr>
-  </div>
+  <table border="1" style="width:100%" >
+  <caption>Cursos</caption>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Docente</th>
+  </tr>
+  <tr ng-repeat="course in coursesCtrl.courseData">
+    <td> {{course.name}} </td>
+    <td> {{course.description}}  </td>
+    <td><strong><i>{{course.instructor}}</i></strong></td>
+  </tr>
+  </table>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
